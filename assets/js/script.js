@@ -9,7 +9,13 @@ function checkName(e) {
   const value = e.target.value.trim()
   const regex = /^[a-zA-Z\s]{2,}$/
   
-  console.log(regex.test(value))
+  if (regex.test(value)) {
+    name.nextElementSibling.classList.remove('bi-x-circle-fill')
+    name.nextElementSibling.classList.add('bi-check-circle-fill')
+  } else {
+    name.nextElementSibling.classList.remove('bi-check-circle-fill')
+    name.nextElementSibling.classList.add('bi-x-circle-fill')
+  }
 }
 
 function checkEmail(e) {
