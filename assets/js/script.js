@@ -5,47 +5,43 @@ const phone = document.getElementById('phone')
 const password = document.getElementById('password')
 const message = document.getElementById('message')
 
-function checkName(e) {
-  const value = e.target.value.trim()
+function checkName(value) {
   const regex = /^[a-zA-Z\s]{2,}$/
+  return regex.test(value)
+}
+
+function checkEmail(value) {
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+  return regex.test(value)
+}
+
+function checkPhone(value) {
+  const regex = /^\d{11}$/
+  return regex.test(value)
+}
+
+function checkPassword(value) {
+  return value.length >= 8
+}
+
+function checkMessage(value) {
+  return value.length >= 20
+}
+
+function handleCheckField(input, condition) {
+  const inputValue = input.value.trim()
   
-  if (regex.test(value)) {
-    name.nextElementSibling.classList.remove('bi-x-circle-fill')
-    name.nextElementSibling.classList.add('bi-check-circle-fill')
+  if(condition(inputValue)) {
+    input.nextElementSibling.classList.remove('bi-x-circle-fill')
+    input.nextElementSibling.classList.add('bi-check-circle-fill')
   } else {
-    name.nextElementSibling.classList.remove('bi-check-circle-fill')
-    name.nextElementSibling.classList.add('bi-x-circle-fill')
+    input.nextElementSibling.classList.remove('bi-check-circle-fill')
+    input.nextElementSibling.classList.add('bi-x-circle-fill')
   }
 }
 
-function checkEmail(e) {
-  const value = e.target.value.trim()
-  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
-  
-  console.log(regex.test(value))
-}
-
-function checkPhone(e) {
-  const value = e.target.value.trim()
-  const regex = /^\d{11}$/
-  
-  console.log(regex.test(value))
-}
-
-function checkPassword(e) {
-  const value = e.target.value.trim()
-  
-  console.log(value.length)
-}
-
-function checkMessage(e) {
-  const value = e.target.value.trim()
-  
-  console.log(value.length)
-}
-
-name.addEventListener('change', checkName)
-email.addEventListener('change', checkEmail)
-phone.addEventListener('change', checkPhone)
-password.addEventListener('change', checkPassword)
-message.addEventListener('change', checkMessage)
+name.addEventListener('change', () => handleCheckField(name, checkName))
+email.addEventListener('change', () => handleCheckField(email, checkEmail))
+phone.addEventListener('change', () => handleCheckField(phone, checkPhone))
+password.addEventListener('change', () => handleCheckField(password, checkPassword))
+message.addEventListener('change', () => handleCheckField(message, checkMessage))
