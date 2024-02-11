@@ -4,6 +4,7 @@ const email = document.getElementById('email')
 const phone = document.getElementById('phone')
 const password = document.getElementById('password')
 const message = document.getElementById('message')
+const data = {}
 
 function isName(name) {
   const regex = /^[a-zA-Z\s]{2,}$/
@@ -35,9 +36,21 @@ function handleCheckField(input, condition) {
   if (condition(value)) {
     icon.remove('bi-x-circle-fill')
     icon.add('bi-check-circle-fill')
+    data[input.id] = value
   } else {
     icon.remove('bi-check-circle-fill')
     icon.add('bi-x-circle-fill')
+    data[input.id] = null
+  }
+}
+
+function isValid(e) {
+  e.preventDefault()
+  
+  const values = Object.values(data)
+  
+  if (!values.includes(null)) {
+    showModal()
   }
 }
 
@@ -46,3 +59,4 @@ email.addEventListener('change', () => handleCheckField(email, isEmail))
 phone.addEventListener('change', () => handleCheckField(phone, isPhone))
 password.addEventListener('change', () => handleCheckField(password, isPassword))
 message.addEventListener('change', () => handleCheckField(message, isMessage))
+form.addEventListener('submit', isValid)
