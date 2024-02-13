@@ -24,3 +24,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+#modal {
+  display: none;
+  position: fixed;
+}
