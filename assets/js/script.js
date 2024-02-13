@@ -44,6 +44,23 @@ function handleCheckField(input, condition) {
   }
 }
 
+function showModal() {
+  const modal = document.getElementById('modal')
+  const btn = document.getElementById('btn')
+  
+  modal.style.display = 'block'
+  
+  btn.addEventListener('click', () => {
+    modal.style.display = 'none'
+  })
+  
+  function handleClickOut(e) {
+    if (e.target != modal) modal.style.display = 'none'
+  }
+  
+  window.addEventListener('click', handleClickOut)
+}
+
 function isValid(e) {
   e.preventDefault()
   
