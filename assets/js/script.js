@@ -50,14 +50,24 @@ function showModal() {
   
   modal.style.display = 'block'
   
-  btn.addEventListener('click', () => {
-    modal.style.display = 'none'
-  })
-  
-  function handleClickOut(e) {
-    if (e.target != modal) modal.style.display = 'none'
+  function removeListeners() {
+    btn.removeEventListener('click', handleCloseModal)
+    window.removeEventListener('click', handleClickOut)
   }
   
+  function handleCloseModal() {
+    modal.style.display = 'none'
+    removeListeners()
+  }
+  
+  function handleClickOut(e) {
+    if (e.target != modal) {
+      modal.style.display = 'none'
+      removeListeners()
+    }
+  }
+  
+  btn.addEventListener('click', handleCloseModal)
   window.addEventListener('click', handleClickOut)
 }
 
