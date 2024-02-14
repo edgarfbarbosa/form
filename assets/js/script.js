@@ -74,9 +74,13 @@ function showModal() {
 function isValid(e) {
   e.preventDefault()
   
+  const keys = Object.keys(data)
   const values = Object.values(data)
   
-  if (!values.includes(null)) {
+  const requiredKeys = [name.id, email.id, phone.id, password.id, message.id]
+  const allKeysPresent = requiredKeys.every(key => keys.includes(key))
+  
+  if (allKeysPresent && !values.includes(null)) {
     showModal()
   }
 }
