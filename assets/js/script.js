@@ -37,6 +37,7 @@ function handleCheckField(input, condition) {
     icon.remove('bi-x-circle-fill')
     icon.add('bi-check-circle-fill')
     data[input.id] = value
+    localStorage[input.id] = value
   } else {
     icon.remove('bi-check-circle-fill')
     icon.add('bi-x-circle-fill')
@@ -74,6 +75,12 @@ function showModal() {
 function isValid(e) {
   e.preventDefault()
   
+  handleCheckField(name, isName)
+  handleCheckField(email, isEmail)
+  handleCheckField(phone, isPhone)
+  handleCheckField(password, isPassword)
+  handleCheckField(message, isMessage)
+  
   const keys = Object.keys(data)
   const values = Object.values(data)
   
@@ -82,9 +89,19 @@ function isValid(e) {
   
   if (allKeysPresent && !values.includes(null)) {
     showModal()
+    localStorage.clear()
   }
 }
 
+function setValues() {
+  const elements = Array.from(form.elements)
+  
+  elements.forEach(element => {
+    element.value = localStorage.getItem(element.id)
+  })
+}
+
+window.addEventListener('load', setValues)
 name.addEventListener('change', () => handleCheckField(name, isName))
 email.addEventListener('change', () => handleCheckField(email, isEmail))
 phone.addEventListener('change', () => handleCheckField(phone, isPhone))
