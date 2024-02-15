@@ -7,18 +7,15 @@ const message = document.getElementById('message')
 const data = {}
 
 function isName(name) {
-  const regex = /^[a-zA-Z\s]{2,}$/
-  return regex.test(name)
+  return /^[a-zA-Z\s]{2,}$/.test(name)
 }
 
 function isEmail(email) {
-  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
-  return regex.test(email)
+  return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)
 }
 
 function isPhone(phone) {
-  const regex = /^\d{11}$/
-  return regex.test(phone)
+  return /^\d{11}$/.test(phone)
 }
 
 function isPassword(password) {
@@ -75,11 +72,17 @@ function showModal() {
 function isValid(e) {
   e.preventDefault()
   
-  handleCheckField(name, isName)
-  handleCheckField(email, isEmail)
-  handleCheckField(phone, isPhone)
-  handleCheckField(password, isPassword)
-  handleCheckField(message, isMessage)
+  const fields = [
+    {input: name, condition: isName},
+    {input: email, condition: isEmail},
+    {input: phone, condition: isPhone},
+    {input: password, condition: isPassword},
+    {input: message, condition: isMessage}
+  ]
+  
+  fields.forEach((field) => {
+    handleCheckField(field.input, field.condition)
+  })
   
   const keys = Object.keys(data)
   const values = Object.values(data)
