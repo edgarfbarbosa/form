@@ -7,7 +7,6 @@ export default function initFormValidation() {
   const phone = document.getElementById('phone')
   const password = document.getElementById('password')
   const message = document.getElementById('message')
-  const data = {}
   
   /**
   * Verifica se o nome fornecido é válido, deve conter apenas letras e espaços e no mínimo 2 caracteres.
@@ -61,12 +60,11 @@ export default function initFormValidation() {
     if (condition(value)) {
       icon.remove('bi-x-circle-fill')
       icon.add('bi-check-circle-fill')
-      data[input.id] = value
       localStorage[input.id] = value
     } else {
       icon.remove('bi-check-circle-fill')
       icon.add('bi-x-circle-fill')
-      data[input.id] = null
+      localStorage.removeItem(input.id)
     }
   }
   
@@ -85,13 +83,11 @@ export default function initFormValidation() {
       handleCheckField(field.input, field.condition)
     })
     
-    const keys = Object.keys(data)
-    const values = Object.values(data)
-    
+    const keys = Object.keys(localStorage)
     const requiredKeys = [name.id, email.id, phone.id, password.id, message.id]
     const allKeysPresent = requiredKeys.every(key => keys.includes(key))
     
-    if (allKeysPresent && !values.includes(null)) {
+    if (allKeysPresent) {
       showModal()
       localStorage.clear()
     }
