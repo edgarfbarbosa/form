@@ -102,15 +102,25 @@ export default function initFormValidation() {
     })
   }
   
+  /**
+  * Valida o formulário e demonstra modal de sucesso se todos os campos necessário estiverem presentes.
+  * Limpa o localStorage se o formulário for válido.
+  */
   function validateForm(e) {
+    // Impede o comportamento padrão do navegador, que seria recarregar a página
     e.preventDefault()
     
+    // Valida todos os campos do formulário e armazena os dados válidos no localStorage
     validateAllFields()
     
-    const keys = Object.keys(localStorage)
+    // Obtém todas as chaves presentes no localStorage
+    const localStorageKeys = Object.keys(localStorage)
+    // Define as chaves obrigatórias que devem estar presentes no localStorage
     const requiredKeys = [name.id, email.id, phone.id, password.id, message.id]
-    const allKeysPresent = requiredKeys.every(key => keys.includes(key))
+    // Verifica se todas as chaves obrigatórias estão presentes no localStorage
+    const allKeysPresent = requiredKeys.every(key => localStorageKeys.includes(key))
     
+    // Se todas as chaves estiverem presentes no localStorage, mostra um modal e limpa o localStorage
     if (allKeysPresent) {
       showModal()
       localStorage.clear()
