@@ -68,7 +68,7 @@ export default function initFormValidation() {
     }
   }
   
-  function isValid(e) {
+  function validateForm(e) {
     e.preventDefault()
     
     const fields = [
@@ -107,5 +107,5 @@ export default function initFormValidation() {
   phone.addEventListener('change', () => handleCheckField(phone, isPhone))
   password.addEventListener('change', () => handleCheckField(password, isPassword))
   message.addEventListener('change', () => handleCheckField(message, isMessage))
-  form.addEventListener('submit', isValid)
+  form.addEventListener('submit', validateForm)
 }
