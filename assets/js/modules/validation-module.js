@@ -1,7 +1,12 @@
 import showModal from './modal-module.js'
 
+/**
+* Inicializa a validação do formulário e configura os eventos necessários.
+*/
 export default function initFormValidation() {
+  // Obtém o formulário
   const form = document.getElementById('contactForm')
+  // Obtém os campos de entrada
   const name = document.getElementById('name')
   const email = document.getElementById('email')
   const phone = document.getElementById('phone')
@@ -140,11 +145,14 @@ export default function initFormValidation() {
     })
   }
   
+  // Adiciona evento para carregar os valores do formulário armazenados no localStorage quando a página for carregada
   window.addEventListener('load', loadFormValuesFromLocalStorage)
+  // Adiciona evento para validar e armazenar os valores dos campos de entrada ao mudar de campo
   name.addEventListener('change', () => validateFieldAndStore(name, isName))
   email.addEventListener('change', () => validateFieldAndStore(email, isEmail))
   phone.addEventListener('change', () => validateFieldAndStore(phone, isPhone))
   password.addEventListener('change', () => validateFieldAndStore(password, isPassword))
   message.addEventListener('change', () => validateFieldAndStore(message, isMessage))
+  // Adiciona evento para validar o formulário e limpar o localStorage quando o formulário for enviado
   form.addEventListener('submit', validateForm)
 }
