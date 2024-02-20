@@ -81,10 +81,13 @@ export default function initFormValidation() {
     }
   }
   
-  function validateForm(e) {
-    e.preventDefault()
-    
-    const fields = [
+  /**
+  * Valida todos os campos do formulário e armazena os dados válidos no localStorage.
+  * Cada campo é validado usando sua função de condição correspondente.
+  */
+  function validateAllFields() {
+    // Array de objetos com cada objeto contendo um campo a ser verificado e sua função de validação
+    const fieldsMap = [
       {input: name, condition: isName},
       {input: email, condition: isEmail},
       {input: phone, condition: isPhone},
@@ -92,9 +95,17 @@ export default function initFormValidation() {
       {input: message, condition: isMessage}
     ]
     
-    fields.forEach((field) => {
+    // Percorre todos os campos do formulário utilizando o mapa acima
+    fieldsMap.forEach((field) => {
+      // Chama a função validateFieldAndStore passando o campo de entrada e sua função de validação
       validateFieldAndStore(field.input, field.condition)
     })
+  }
+  
+  function validateForm(e) {
+    e.preventDefault()
+    
+    validateAllFields()
     
     const keys = Object.keys(localStorage)
     const requiredKeys = [name.id, email.id, phone.id, password.id, message.id]
