@@ -127,15 +127,20 @@ export default function initFormValidation() {
     }
   }
   
-  function setValues() {
-    const elements = Array.from(form.elements)
+  /**
+  * Restaura os valores dos elementos do formulário a partir do localStorage.
+  */
+  function loadFormValuesFromLocalStorage() {
+    // Obtém todos os elementos do formulário
+    const formElements = Array.from(form.elements)
     
-    elements.forEach(element => {
+    // Define o valor de cada elemento com base nos dados armazenados no localStorage
+    formElements.forEach(element => {
       element.value = localStorage.getItem(element.id)
     })
   }
   
-  window.addEventListener('load', setValues)
+  window.addEventListener('load', loadFormValuesFromLocalStorage)
   name.addEventListener('change', () => validateFieldAndStore(name, isName))
   email.addEventListener('change', () => validateFieldAndStore(email, isEmail))
   phone.addEventListener('change', () => validateFieldAndStore(phone, isPhone))
