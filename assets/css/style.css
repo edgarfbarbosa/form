@@ -5,26 +5,31 @@
 }
 
 body {
+  /* background-color: #CCCCCC; */
   align-items: center;
   display: flex;
   height: 100vh;
   justify-content: center;
 }
 
-.app img {
-  width: 50%;
-}
-
 .app {
+  /* background-color: #F5F5F5; */
   align-items: center;
   display: flex;
   flex-direction: row-reverse;
   gap: 1rem;
   max-width: 920px;
+  overflow: hidden;
   width: 100%;
 }
 
-.app form {
+.app__img {
+  object-fit: contain;
+  width: 50%;
+}
+
+.app__form {
+  padding: 0 1rem;
   width: 50%;
 }
 
@@ -34,20 +39,29 @@ body {
   gap: 1rem;
 }
 
-#modal {
-  display: none;
-  position: fixed;
-}
-
 .form__label {
   display: block;
 }
 
 .form__input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: .875rem 0;
   width: 100%;
 }
 
 .form__textarea {
   resize: none;
-  width: 100%;
+}
+
+.form__btn {
+  border: thin solid black;
+  cursor: pointer;
+  padding: .875rem 0;
+}
+
+#modal {
+  display: none;
+  position: fixed;
 }
