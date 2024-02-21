@@ -14,31 +14,38 @@
   
   <div class="app">
     
+    <img src="./assets/img/side.jpg">
+    
     <form action="#" id="contactForm" novalidate>
       <div>
         
-        <label>
-          <input type="text" id="name" placeholder="Seu nome..." autocomplete="off">
+        <label class="form__label">
+          <span>Nome</span>
+          <input class="form__input" type="text" id="name" placeholder="Seu nome..." autocomplete="off">
           <i class="bi"></i>
         </label>
         
-        <label>
-          <input type="email" id="email" placeholder="Seu e-mail..." autocomplete="off">
+        <label class="form__label">
+          <span>E-mail</span>
+          <input class="form__input" type="email" id="email" placeholder="Seu e-mail..." autocomplete="off">
           <i class="bi"></i>
         </label>
         
-        <label>
-          <input type="tel" id="phone" placeholder="Seu número..." autocomplete="off">
+        <label class="form__label">
+          <span>Número</span>
+          <input class="form__input" type="tel" id="phone" placeholder="Seu número..." autocomplete="off">
           <i class="bi"></i>
         </label>
         
-        <label>
-          <input type="password" id="password" placeholder="Sua senha..." autocomplete="off">
+        <label class="form__label">
+          <span>Senha</span>
+          <input class="form__input" type="password" id="password" placeholder="Sua senha..." autocomplete="off">
           <i class="bi"></i>
         </label>
         
-        <label>
-          <textarea id="message" placeholder="Sua mensagem..."></textarea>
+        <label class="form__label">
+          <span>Mensagem</span>
+          <textarea class="form__textarea" id="message" placeholder="Sua mensagem..." rows="4"></textarea>
           <i class="bi"></i>
         </label>
         
