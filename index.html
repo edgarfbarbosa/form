@@ -10,7 +10,7 @@
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/global.css">
   
   <title></title>
 </head>
@@ -18,43 +18,43 @@
   
   <div class="app">
     
-    <img class="app__img" src="./assets/img/side.jpg">
+    <img src="./assets/img/side.jpg">
     
-    <form class="app__form" action="#" id="contactForm" novalidate>
-      
-      <div class="form__title--container">
-        <h1 class="form__title">Cadastro</h1>
-        <p class="form__p">Por favor, preencha os campos abaixo para criar sua conta na loja</p>
-      </div>
+    <form class="form__container" action="#" id="contactForm" novalidate>
       
       <div>
+        <h1 class="form__title">Cadastro</h1>
+        <p class="form__description">Por favor, preencha os campos abaixo para criar sua conta na loja</p>
+      </div>
+      
+      <div class="form__fields-container">
         
         <label class="form__label">
-          <span class="form__span">Nome Completo</span>
+          <span class="form__label-text">Nome Completo</span>
           <input class="form__input" type="text" id="name" placeholder="Digite seu nome..." autocomplete="off">
           <i class="bi"></i>
         </label>
         
         <label class="form__label">
-          <span class="form__span">E-mail</span>
+          <span class="form__label-text">E-mail</span>
           <input class="form__input" type="email" id="email" placeholder="Digite seu e-mail..." autocomplete="off">
           <i class="bi"></i>
         </label>
         
         <label class="form__label">
-          <span class="form__span">Número</span>
+          <span class="form__label-text">Número</span>
           <input class="form__input" type="tel" id="phone" placeholder="Digite seu número..." autocomplete="off">
           <i class="bi"></i>
         </label>
         
         <label class="form__label">
-          <span class="form__span">Senha</span>
+          <span class="form__label-text">Senha</span>
           <input class="form__input" type="password" id="password" placeholder="Digite sua senha..." autocomplete="off">
           <i class="bi"></i>
         </label>
         
         <label class="form__label">
-          <span class="form__span">Endereço de Cadastro</span>
+          <span class="form__label-text">Endereço de Cadastro</span>
           <textarea class="form__input form__textarea" id="message" placeholder="Digite seu endereço..." rows="1"></textarea>
           <i class="bi"></i>
         </label>
