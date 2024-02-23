@@ -1,0 +1,40 @@
+@import url(./form.css);
+@import url(./modal.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-black: #090B09;
+  --color-gray: #CCCCCC;
+  --color-white: #F5F5F5;
+  --font-mulish: 'Mulish', sans-serif;
+}
+
+html, body {
+  align-items: center;
+  color: var(--color-black);
+  display: flex;
+  font-family: var(--font-mulish);
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app {
+  align-items: center;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row-reverse;
+  max-height: 600px;
+  max-width: 920px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.app img {
+  object-fit: contain;
+  width: 50%;
+}
