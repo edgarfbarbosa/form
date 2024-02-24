@@ -32,7 +32,7 @@ export default function showModal() {
   * @param {MouseEvent} e - Evento de clique que determina se o modal será ocultado.
   */
   function handleClickOut(e) {
-    if (e.target != modal) {
+    if (e.target == modal) {
       modal.style.display = 'none'
       removeListeners()
     }
