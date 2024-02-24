@@ -8,8 +8,8 @@ export default function showModal() {
   // Seleciona o botão de fechar dentro do modal
   const btn = document.getElementById('btn')
   
-  // Ao definir o estilo de exibição para 'block', o modal é exibido
-  modal.style.display = 'block'
+  // Ao definir o estilo de exibição para 'flex', o modal é exibido
+  modal.style.display = 'flex'
   
   // Função para remover os ouvintes de eventos do botão e da janela
   function removeListeners() {
