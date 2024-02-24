@@ -16,6 +16,7 @@
 
 html, body {
   align-items: center;
+  background-color: var(--color-gray);
   color: var(--color-black);
   display: flex;
   font-family: var(--font-mulish);
@@ -29,7 +30,7 @@ html, body {
   display: flex;
   flex-direction: row-reverse;
   max-height: 600px;
-  max-width: 920px;
+  max-width: 1024px;
   overflow: hidden;
   width: 100%;
 }
