@@ -16,7 +16,6 @@
 
 html, body {
   align-items: center;
-  background-color: var(--color-gray);
   color: var(--color-black);
   display: flex;
   font-family: var(--font-mulish);
@@ -27,6 +26,7 @@ html, body {
 .app {
   align-items: center;
   background-color: var(--color-white);
+  box-shadow: 0 0 250px rgb(0, 0, 0), 0 0 50px rgba(0, 0, 0, .5);
   display: flex;
   flex-direction: row-reverse;
   max-height: 600px;
