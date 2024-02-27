@@ -60,6 +60,7 @@ export default function initFormValidation() {
   
   /**
   * Valida o campo de entrada do formulário e armazena seu valor no localStorage se for válido.
+  * Atualiza o texto dentro do elemento span com a mensagem de validação ou erro apropriada.
   * Atualiza o ícone de status do campo conforme validade do valor inserido.
   * @param {HTMLInputElement} input - Elemento de entrada a ser validado.
   * @param {Function} condition - Função que verifica se o valor do campo é válido.
@@ -67,17 +68,23 @@ export default function initFormValidation() {
   function validateFieldAndStore(input, condition) {
     // Obtém o valor do campo de entrada, removendo espaços em branco no início e no fim
     const value = input.value.trim()
-    // Obtém o elemento seguinte ao campo de entrada
-    const icon = input.nextElementSibling.classList
+    // Obtém o elemento span associado ao campo de entrada
+    const span = input.previousElementSibling
+    // Obtém o elemento antes do elemento span, o ícone de status
+    const icon = span.previousElementSibling.classList
     
     // Verifica se o valor do campo de entrada é válido usando a função de condição
     if (condition(value)) {
+      // Se o valor for válido, atualiza o texto do span para a mensagem padrão
+      span.innerText = span.dataset.defaultMessage
       // Se o valor for válido, remove o ícone de erro e adiciona o ícone de sucesso
       icon.remove('bi-x-circle-fill')
       icon.add('bi-check-circle-fill')
       // Armazena o valor válido no localStorage
       localStorage[input.id] = value
     } else {
+      // Se o valor não for válido, atualiza o texto do span para a mensagem de erro
+      span.innerText = span.dataset.errorMessage
       // Se o valor não for válido, remove o ícone de sucesso e adiciona o ícone de erro
       icon.remove('bi-check-circle-fill')
       icon.add('bi-x-circle-fill')
