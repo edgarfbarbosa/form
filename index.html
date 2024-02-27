@@ -30,33 +30,43 @@
       <div class="form__fields-container">
         
         <label class="form__label">
-          <span class="form__label-text">Nome Completo</span>
+          <i class="bi"></i>
+          <span class="form__label-text" data-default-message="Nome Completo" data-error-message="Por favor, preencha seu nome completo">
+            Nome Completo
+          </span>
           <input class="form__input" type="text" id="name" placeholder="Digite seu nome..." autocomplete="off">
-          <i class="bi"></i>
         </label>
         
         <label class="form__label">
-          <span class="form__label-text">E-mail</span>
+          <i class="bi"></i>
+          <span class="form__label-text" data-default-message="E-mail" data-error-message="Por favor, insira um e-mail válido">
+            E-mail
+          </span>
           <input class="form__input" type="email" id="email" placeholder="Digite seu e-mail..." autocomplete="off">
-          <i class="bi"></i>
         </label>
         
         <label class="form__label">
-          <span class="form__label-text">Número</span>
+          <i class="bi"></i>
+          <span class="form__label-text" data-default-message="Número" data-error-message="Por favor, insira o número com DDD e o restante do número">
+            Número
+          </span>
           <input class="form__input" type="tel" id="phone" placeholder="Digite seu número..." autocomplete="off">
-          <i class="bi"></i>
         </label>
         
         <label class="form__label">
-          <span class="form__label-text">Senha</span>
+          <i class="bi"></i>
+          <span class="form__label-text" data-default-message="Senha" data-error-message="A senha deve ter entre 6 e 12 caracteres e incluir pelo menos uma letra maiúscula">
+            Senha
+          </span>
           <input class="form__input" type="password" id="password" placeholder="Digite sua senha..." autocomplete="off">
-          <i class="bi"></i>
         </label>
         
         <label class="form__label">
-          <span class="form__label-text">Endereço de Cadastro</span>
-          <textarea class="form__input form__textarea" id="message" placeholder="Digite seu endereço..." rows="1"></textarea>
           <i class="bi"></i>
+          <span class="form__label-text" data-default-message="Endereço de Cadastro" data-error-message="Por favor, preencha o endereço com pelo menos 10 caracteres">
+            Endereço de Cadastro
+          </span>
+          <textarea class="form__input form__textarea" id="message" placeholder="Digite seu endereço..." rows="1"></textarea>
         </label>
         
         <button class="form__btn" type="submit" title="Envie sua mensagem">Cadastrar</button>
