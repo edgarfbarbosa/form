@@ -7,12 +7,26 @@
   width: 50%;
 }
 
+.form__container--login {
+  margin: auto;
+  width: 100%;
+}
+
 .form__title {
   font: 600 2.625rem var(--font-mulish);
 }
 
+.form__title--login {
+  font-size: 1rem;
+  text-align: center;
+}
+
 .form__description {
   font: 400 .875rem var(--font-mulish);
+}
+
+.form__description--login {
+  text-align: center;
 }
 
 .form__fields-container {
