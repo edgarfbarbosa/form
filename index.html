@@ -12,7 +12,7 @@
   
   <link rel="stylesheet" href="./assets/css/global.css">
   
-  <title></title>
+  <title>Store – Cadastre-se</title>
 </head>
 <body>
   
@@ -34,7 +34,7 @@
           <span class="form__label-text" data-default-message="Nome Completo" data-error-message="Por favor, preencha seu nome completo">
             Nome Completo
           </span>
-          <input class="form__input" type="text" id="name" placeholder="Digite seu nome..." autocomplete="off">
+          <input class="form__input" type="text" id="name" placeholder="Digite seu nome..." autocomplete="off" required>
         </label>
         
         <label class="form__label">
@@ -42,7 +42,7 @@
           <span class="form__label-text" data-default-message="E-mail" data-error-message="Por favor, insira um e-mail válido">
             E-mail
           </span>
-          <input class="form__input" type="email" id="email" placeholder="Digite seu e-mail..." autocomplete="off">
+          <input class="form__input" type="email" id="email" placeholder="Digite seu e-mail..." autocomplete="off" required>
         </label>
         
         <label class="form__label">
@@ -50,7 +50,7 @@
           <span class="form__label-text" data-default-message="Número" data-error-message="Por favor, insira o número com DDD e o restante do número">
             Número
           </span>
-          <input class="form__input" type="tel" id="phone" placeholder="Digite seu número..." autocomplete="off">
+          <input class="form__input" type="tel" id="phone" placeholder="Digite seu número..." autocomplete="off" required>
         </label>
         
         <label class="form__label">
@@ -58,7 +58,7 @@
           <span class="form__label-text" data-default-message="Senha" data-error-message="A senha deve ter entre 6 e 12 caracteres e incluir pelo menos uma letra maiúscula">
             Senha
           </span>
-          <input class="form__input" type="password" id="password" placeholder="Digite sua senha..." autocomplete="off">
+          <input class="form__input" type="password" id="password" placeholder="Digite sua senha..." autocomplete="off" required>
         </label>
         
         <label class="form__label">
@@ -69,20 +69,37 @@
           <textarea class="form__input form__textarea" id="message" placeholder="Digite seu endereço..." rows="1"></textarea>
         </label>
         
-        <button class="form__btn" type="submit" title="Envie sua mensagem">Cadastrar</button>
+        <button class="form__btn" type="submit" title="Cadastrar">Cadastrar</button>
         
       </div>
       
     </form>
     
     <div class="modal__container" id="modal">
-      
       <div class="modal__content">
-        <h2>Sua jornada streetwear começa agora</h2>
-        <p>Obrigado por se juntar a nós!</p>
-        <button class="modal__btn" id="btn">&times;</button>
+        <form class="form__container form__container--login" action="#" novalidate>
+          
+          <div>
+            <h2 class="form__title form__title--login">Sua jornada streetwear começa agora!</h2>
+            <p class="form__description form__description--login">Obrigado por se juntar a nós!</p>
+          </div>
+          
+          <div class="form__fields-container">
+            
+            <label class="form__label">
+              <input class="form__input" type="email" id="userEmail" placeholder="Digite seu e-mail..." autocomplete="off">
+            </label>
+            
+            <label class="form__label">
+              <input class="form__input" type="password" id="userPassword" placeholder="Digite sua senha..." autocomplete="off">
+            </label>
+            
+            <button class="form__btn" title="Entrar" id="btn">Entrar</button>
+            
+          </div>
+          
+        </form>
       </div>
-      
     </div>
     
   </div>
