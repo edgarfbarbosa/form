@@ -2,6 +2,7 @@
 
 - [Descrição do Projeto](#descrição-do-projeto)
 - [Tecnologias](#tecnologias-utilizadas)
+- [Features](#features)
 - [Layout](#layout)
   - [Web](#web)
 
@@ -16,6 +17,11 @@
 - HTML
 - CSS
 - JavaScript
+
+<h2>Features</h2>
+
+- [x] Validação de campos do formulário
+- [x] Armazenamento local utilizando `localStorage`
 
 <h2>Layout</h2>
 
