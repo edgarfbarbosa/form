@@ -1,3 +1,3 @@
-import initFormValidation from './modules/validation-manager.js'
+import initFormValidation from './modules/form.js'
 
 initFormValidation()
