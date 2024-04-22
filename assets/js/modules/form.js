@@ -1,4 +1,4 @@
-import { isName, isEmail, isPhone, isPassword, isMessage } from './validation-rules.js'
+import { isName, isEmail, isPhone, isPassword, isAddress } from './rules.js'
 import showModal from './modal.js'
 
 /**
@@ -12,7 +12,7 @@ export default function initFormValidation() {
   const email = document.getElementById('email')
   const phone = document.getElementById('phone')
   const password = document.getElementById('password')
-  const message = document.getElementById('message')
+  const address = document.getElementById('address')
   
   /**
   * Valida o campo de entrada do formulário e armazena seu valor no localStorage se for válido.
@@ -60,7 +60,7 @@ export default function initFormValidation() {
       {input: email, condition: isEmail},
       {input: phone, condition: isPhone},
       {input: password, condition: isPassword},
-      {input: message, condition: isMessage}
+      {input: address, condition: isAddress}
     ]
     
     // Percorre todos os campos do formulário utilizando o mapa acima
@@ -84,7 +84,7 @@ export default function initFormValidation() {
     // Obtém todas as chaves presentes no localStorage
     const localStorageKeys = Object.keys(localStorage)
     // Define as chaves obrigatórias que devem estar presentes no localStorage
-    const requiredKeys = [name.id, email.id, phone.id, password.id, message.id]
+    const requiredKeys = [name.id, email.id, phone.id, password.id, address.id]
     // Verifica se todas as chaves obrigatórias estão presentes no localStorage
     const allKeysPresent = requiredKeys.every(key => localStorageKeys.includes(key))
     
@@ -111,11 +111,11 @@ export default function initFormValidation() {
   // Adiciona evento para carregar os valores do formulário armazenados no localStorage quando a página for carregada
   window.addEventListener('load', loadFormValuesFromLocalStorage)
   // Adiciona evento para validar e armazenar os valores dos campos de entrada ao mudar de campo
-  name.addEventListener('change', () => validateFieldAndStore(name, isName))
-  email.addEventListener('change', () => validateFieldAndStore(email, isEmail))
-  phone.addEventListener('change', () => validateFieldAndStore(phone, isPhone))
-  password.addEventListener('change', () => validateFieldAndStore(password, isPassword))
-  message.addEventListener('change', () => validateFieldAndStore(message, isMessage))
+  name.addEventListener('input', () => validateFieldAndStore(name, isName))
+  email.addEventListener('input', () => validateFieldAndStore(email, isEmail))
+  phone.addEventListener('input', () => validateFieldAndStore(phone, isPhone))
+  password.addEventListener('input', () => validateFieldAndStore(password, isPassword))
+  address.addEventListener('input', () => validateFieldAndStore(address, isAddress))
   // Adiciona evento para validar o formulário e limpar o localStorage quando o formulário for enviado
   form.addEventListener('submit', validateForm)
 }
