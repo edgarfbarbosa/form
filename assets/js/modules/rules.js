@@ -35,10 +35,10 @@ export function isPassword(password) {
 }
 
 /**
-* Verifica se a mensagem fornecida é válida, tendo pelo menos 10 caracteres.
-* @param {string} message - A mensagem a ser verificada.
+* Verifica se o endereço fornecido é válido, tendo pelo menos 10 caracteres.
+* @param {string} address - A mensagem a ser verificada.
 * @returns {boolean} Retorna verdadeiro se a mensagem for válida, falso caso contrário.
 */
-export function isMessage(message) {
-  return /^[\s\S]{10,}$/.test(message)
+export function isAddress(address) {
+  return /^[\s\S]{10,}$/.test(address);
 }
