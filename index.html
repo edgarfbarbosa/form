@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <meta name="description" content="Bem-vindo à loja Store! Cadastre-se para receber novidades sobre nossos produtos e ofertas especiais.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
@@ -18,7 +20,7 @@
   
   <div class="app">
     
-    <img src="./assets/img/side.jpg">
+    <img src="./assets/img/side.jpg" alt="Modelo usando roupas da marca Store">
     
     <form class="form__container" action="#" id="contactForm" novalidate>
       
@@ -66,7 +68,7 @@
           <span class="form__label-text" data-default-message="Endereço de Cadastro" data-error-message="Por favor, preencha o endereço com pelo menos 10 caracteres">
             Endereço de Cadastro
           </span>
-          <textarea class="form__input form__textarea" id="message" placeholder="Digite seu endereço..." rows="1"></textarea>
+          <input class="form__input" type="text" id="address" placeholder="Digite seu endereço..." autocomplete="off" required></input>
         </label>
         
         <button class="form__btn" type="submit" title="Cadastrar">Cadastrar</button>
