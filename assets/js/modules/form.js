@@ -111,11 +111,11 @@ export default function initFormValidation() {
   // Adiciona evento para carregar os valores do formulário armazenados no localStorage quando a página for carregada
   window.addEventListener('load', loadFormValuesFromLocalStorage)
   // Adiciona evento para validar e armazenar os valores dos campos de entrada ao mudar de campo
-  name.addEventListener('input', () => validateFieldAndStore(name, isName))
-  email.addEventListener('input', () => validateFieldAndStore(email, isEmail))
-  phone.addEventListener('input', () => validateFieldAndStore(phone, isPhone))
-  password.addEventListener('input', () => validateFieldAndStore(password, isPassword))
-  address.addEventListener('input', () => validateFieldAndStore(address, isAddress))
+  name.addEventListener('change', () => validateFieldAndStore(name, isName))
+  email.addEventListener('change', () => validateFieldAndStore(email, isEmail))
+  phone.addEventListener('change', () => validateFieldAndStore(phone, isPhone))
+  password.addEventListener('change', () => validateFieldAndStore(password, isPassword))
+  address.addEventListener('change', () => validateFieldAndStore(address, isAddress))
   // Adiciona evento para validar o formulário e limpar o localStorage quando o formulário for enviado
   form.addEventListener('submit', validateForm)
 }
